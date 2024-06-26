@@ -1090,6 +1090,7 @@ dtb-$(CONFIG_ARCH_IMX9) += \
 	imx93-11x11-evk.dtb \
 	imx93-11x11-evk-pmic-pf0900.dtb \
 	imx93-14x14-evk.dtb \
+	maaxboard-osm93.dtb \
 	imx93-9x9-qsb.dtb \
 	imx93-9x9-qsb-ontat-wvga-panel.dtb \
 	imx91p-11x11-evk.dtb \
