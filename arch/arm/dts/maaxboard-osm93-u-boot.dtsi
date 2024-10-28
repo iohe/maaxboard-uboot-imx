@@ -116,6 +116,14 @@
 	u-boot,dm-spl;
 };
 
+&pinctrl_lpi2c1 {
+	u-boot,dm-spl;
+};
+
+&id_eeprom {
+	u-boot,dm-spl;
+};
+
 &pinctrl_lpi2c2 {
 	u-boot,dm-spl;
 };
