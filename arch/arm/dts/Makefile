@@ -1023,8 +1023,6 @@ dtb-$(CONFIG_ARCH_IMX8) += \
 	imx8-giedi.dtb
 
 dtb-$(CONFIG_ARCH_IMX8ULP) += \
-    maaxboard.dtb \
-    maaxboard-8ulp.dtb \
 	imx8ulp-evk.dtb \
 	imx8ulp-evk-i3c.dtb \
 	imx8ulp-9x9-evk.dtb \
@@ -1032,6 +1030,7 @@ dtb-$(CONFIG_ARCH_IMX8ULP) += \
 	imx8ulp-watch.dtb
 
 dtb-$(CONFIG_ARCH_IMX8M) += \
+	maaxboard.dtb \
 	imx8mm-data-modul-edm-sbc.dtb \
 	imx8mm-ddr4-evk.dtb \
 	imx8mm-ddr4-ab2.dtb \

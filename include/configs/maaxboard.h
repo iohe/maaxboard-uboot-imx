@@ -93,15 +93,15 @@
     "mmcdev="__stringify(CONFIG_SYS_MMC_ENV_DEV)"\0" \
     "mmcpart=1\0" \
     "mmcroot=" CONFIG_MMCROOT " rootwait rw\0" \
-    "mmcautodetect=yes\0" \
+    "mmcautodetect=no\0" \
     "mmcargs=setenv bootargs ${jh_clk} ${mcore_clk} console=${console} root=${mmcroot}\0 " \
     "dtbo_addr=0x43010000\0"  \
     "dtbo_dir=overlays\0"   \
     "fdt_size=0x10000\0" \
     "bootenvfile=uEnv.txt\0"  \
-    "loadenvconf=fatload mmc ${mmcdev}:${mmcpart} ${loadaddr} ${bootenvfile};env import -t ${loadaddr} ${filesize}\0" \
-    "loadimage=fatload mmc ${mmcdev}:${mmcpart} ${loadaddr} ${image}\0" \
-    "loadfdt=fatload mmc ${mmcdev}:${mmcpart} ${fdt_addr_r} ${fdtfile}\0" \
+    "loadenvconf=ext4load mmc ${mmcdev}:${mmcpart} ${loadaddr} ${bootenvfile};env import -t ${loadaddr} ${filesize}\0" \
+    "loadimage=ext4load mmc ${mmcdev}:${mmcpart} ${loadaddr} ${image}\0" \
+    "loadfdt=ext4load mmc ${mmcdev}:${mmcpart} ${fdt_addr_r} ${fdtfile}\0" \
     "boot_os=booti ${loadaddr} - ${fdt_addr_r};\0" \
     "mmcboot=run mmcargs; run loadimage; run loadfdt; run boot_os\0"
 
@@ -113,11 +113,11 @@
 
 #define CFG_SYS_SDRAM_BASE           0x40000000
 #define PHYS_SDRAM                      0x40000000
-#define PHYS_SDRAM_SIZE			0x80000000 /* 3GB DDR */
+#define PHYS_SDRAM_SIZE			0x80000000 /* 2GB DDR */
 
 #define CFG_MXC_UART_BASE		UART_BASE_ADDR(1)
 
-#define CONFIG_MMCROOT          "/dev/mmcblk1p2"  /* USDHC2 */
+#define CONFIG_MMCROOT          "/dev/mmcblk0p3"  /* USDHC2 */
 
 #define CFG_SYS_FSL_USDHC_NUM	2
 #define CFG_SYS_FSL_ESDHC_ADDR       0

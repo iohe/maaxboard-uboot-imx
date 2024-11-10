@@ -11,7 +11,7 @@
 
 #define FDT_APPLY_OVERLAY()          \
     "echo Applying DT overlay => ${dtbo_file}; " \
-	"fatload mmc ${mmcdev}:${mmcpart} ${dtbo_addr} ${dtbo_dir}/${dtbo_file}; " \
+	"ext4load mmc ${mmcdev}:${mmcpart} ${dtbo_addr} ${dtbo_dir}/${dtbo_file}; " \
 	"fdt addr ${fdt_addr_r}; " \
 	"fdt resize ${fdt_size}; " \
 	"fdt apply ${dtbo_addr}; "
